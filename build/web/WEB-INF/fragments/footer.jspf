@@ -1,0 +1,35 @@
+<footer class="bg-white pt-20 pb-10 border-t border-gray-100">
+    <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-12 mb-16">
+            <div class="col-span-1 md:col-span-2">
+                <div class="flex items-center gap-2 mb-6">
+                    <div class="w-8 h-8 text-primary bg-primary/10 rounded-full flex items-center justify-center p-1.5">
+                        <span class="material-symbols-outlined text-[20px]">soup_kitchen</span>
+                    </div>
+                    <span class="text-xl font-extrabold tracking-tight text-secondary">Bếp Cloud</span>
+                </div>
+                <p class="text-text-sub max-w-sm leading-relaxed mb-6">
+                    Hệ sinh thái công nghệ hàng đầu cho ngành F&B Việt Nam. Giúp nhà hàng vận hành chuyên nghiệp và hiệu quả hơn.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white transition-all">
+                        <span class="material-symbols-outlined text-xl">share</span>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6">Sản phẩm</h4>
+                <ul class="space-y-4 text-text-sub text-sm">
+                    <li><a href="#" class="hover:text-primary transition-colors">Order tại bàn</a></li>
+                    <li><a href="#" class="hover:text-primary transition-colors">Hệ thống bếp KDS</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-400 text-xs">
+            <p>© 2024 Bếp Cloud. Nền tảng quản lý F&B số 1 Việt Nam.</p>
+            <div class="flex gap-6">
+                <span>Hotline: 1900 1234</span>
+            </div>
+        </div>
+    </div>
+</footer>
