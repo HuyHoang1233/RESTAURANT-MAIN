@@ -5,7 +5,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Đăng nhập - Bếp Cloud</title>
+        <title>Đăng nhập - Danran</title>
 
         <!-- Tailwind CSS -->
         <script src="https://cdn.tailwindcss.com"></script>
@@ -77,7 +77,7 @@
                     <a href="${pageContext.request.contextPath}/index.html" class="group">
                         <h1
                             class="text-white text-6xl xl:text-7xl font-black tracking-tight drop-shadow-lg transform transition-transform group-hover:scale-105 duration-300">
-                            Bếp Cloud
+                            Danran
                         </h1>
                     </a>
                     <p class="text-white/95 text-xl xl:text-2xl font-medium tracking-wide leading-relaxed">
@@ -109,7 +109,7 @@
 
                         <!-- Mobile-only Branding -->
                         <div class="lg:hidden text-primary font-black text-2xl tracking-tighter">
-                            Bếp Cloud
+                            Danran
                         </div>
 
                         <div class="w-11 hidden lg:block"></div>
@@ -192,7 +192,7 @@
 
                                                 <!-- Forgot Password Link -->
                                                 <div class="flex justify-end px-4">
-                                                    <a href="#"
+                                                    <a href="${pageContext.request.contextPath}/forgot-password"
                                                         class="text-sm font-bold text-primary hover:text-primary-hover transition-colors underline-offset-4 hover:underline">
                                                         Quên mật khẩu?
                                                     </a>

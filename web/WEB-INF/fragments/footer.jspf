@@ -6,7 +6,7 @@
                     <div class="w-8 h-8 text-primary bg-primary/10 rounded-full flex items-center justify-center p-1.5">
                         <span class="material-symbols-outlined text-[20px]">soup_kitchen</span>
                     </div>
-                    <span class="text-xl font-extrabold tracking-tight text-secondary">Bếp Cloud</span>
+                    <span class="text-xl font-extrabold tracking-tight text-secondary">Danran</span>
                 </div>
                 <p class="text-text-sub max-w-sm leading-relaxed mb-6">
                     Hệ sinh thái công nghệ hàng đầu cho ngành F&B Việt Nam. Giúp nhà hàng vận hành chuyên nghiệp và hiệu quả hơn.
@@ -26,9 +26,9 @@
             </div>
         </div>
         <div class="pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-400 text-xs">
-            <p>© 2024 Bếp Cloud. Nền tảng quản lý F&B số 1 Việt Nam.</p>
+            <p>© 2024 Danran n?n t?ng qu?n l� s? 1 Vi?t Nam.</p>
             <div class="flex gap-6">
-                <span>Hotline: 1900 1234</span>
+                <span>Hotline: 19001234</span>
             </div>
         </div>
     </div>

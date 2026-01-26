@@ -5,7 +5,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Đăng ký tài khoản - Bếp Cloud</title>
+        <title>Đăng ký tài khoản - Danran</title>
 
         <!-- Tailwind CSS -->
         <script src="https://cdn.tailwindcss.com"></script>
@@ -74,7 +74,7 @@
                     <a href="${pageContext.request.contextPath}/index.html" class="group">
                         <h1
                             class="text-white text-6xl xl:text-7xl font-black tracking-tight drop-shadow-lg transform transition-transform group-hover:scale-105 duration-300">
-                            Bếp Cloud
+                            Danran
                         </h1>
                     </a>
                     <p class="text-white/95 text-xl xl:text-2xl font-medium tracking-wide leading-relaxed">
@@ -104,7 +104,7 @@
                         </a>
 
                         <div class="lg:hidden text-primary font-black text-2xl tracking-tighter">
-                            Bếp Cloud
+                            Danran
                         </div>
 
                         <div class="w-11 hidden lg:block"></div>
@@ -180,6 +180,7 @@
                                                     </span>
                                                 </div>
                                                 <input type="tel" id="phoneNumber" name="phoneNumber"
+                                                    value="${param.phoneNumber}"
                                                     class="flex-1 w-full h-full border-none bg-transparent px-6 text-text-main font-medium placeholder:text-text-secondary/40 focus:ring-0 text-lg"
                                                     placeholder="Số điện thoại dùng để đăng nhập" required />
                                             </div>
@@ -269,7 +270,7 @@
                                                     vụ</a> và
                                                 <a href="#" class="text-primary font-bold hover:underline">Chính sách
                                                     bảo
-                                                    mật</a> của Bếp Cloud.
+                                                    mật</a> của Danran.
                                             </label>
                                         </div>
 

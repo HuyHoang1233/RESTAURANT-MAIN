@@ -4,13 +4,13 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
     
-    <display-name>Bếp Cloud - Restaurant Management</display-name>
+    <display-name>Danran - Restaurant Management</display-name>
     
     <!-- Welcome File Configuration -->
     <welcome-file-list>
-        <welcome-file>bepcloud.jsp</welcome-file>
-        <welcome-file>bepcloud.html</welcome-file>
         <welcome-file>index.html</welcome-file>
+        <welcome-file>danran.jsp</welcome-file>
+        <welcome-file>danran.html</welcome-file>
     </welcome-file-list>
     
     <!-- Session Configuration -->
@@ -18,4 +18,14 @@
         <session-timeout>30</session-timeout>
     </session-config>
     
+    <!-- Servlet configuration -->
+    <servlet>
+        <servlet-name>MenuServlet</servlet-name>
+        <servlet-class>danran.controller.main.MenuServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MenuServlet</servlet-name>
+        <url-pattern>/menu</url-pattern>
+    </servlet-mapping>
+
 </web-app>
