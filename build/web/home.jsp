@@ -288,8 +288,7 @@
                             <span class="h-0.5 w-10 bg-primary"></span>
                             Bếp Trưởng
                         </div>
-                        <h3 class="text-4xl font-black text-secondary italic">"Nấu ăn là nghệ thuật sẻ chia
-                            yêu thương."</h3>
+                        <h3 class="text-4xl font-black text-secondary italic">"Nấu ăn là nghệ thuật sẻ chiayêu thương."</h3>
                         <p class="text-gray-500 leading-relaxed text-lg">
                             Tại Danran, mỗi món ăn không chỉ là sự kết hợp của gia vị, mà là tâm huyết của
                             đội ngũ đầu bếp. Chúng tôi mong muốn mang lại cảm giác "đoàn viên" (Danran)
@@ -307,6 +306,8 @@
                         </div>
                     </div>
                 </div>
+                
+                <%@ include file="fragments/footer.jspf" %>
             </main>
 
             <!-- Sidebar Right -->

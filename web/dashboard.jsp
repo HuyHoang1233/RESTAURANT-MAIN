@@ -70,12 +70,10 @@
                     <div class="flex items-center gap-4">
                         <div class="text-right">
                             <p class="text-sm font-bold">
-                                <%= (currentUser != null) ? currentUser.getPhoneNumber()
-                                            : session.getAttribute("userPhone")%>
+                                <%= (currentUser != null) ? currentUser.getPhoneNumber() : session.getAttribute("userPhone")%>
                             </p>
                             <p class="text-[10px] text-gray-400 uppercase font-black">
-                                <%= (currentUser != null && currentUser.getRoleName() != null)
-                                            ? currentUser.getRoleName() : "Người dùng"%>
+                                <%= (currentUser != null && currentUser.getRoleName() != null) ? currentUser.getRoleName() : "Người dùng"%>
                             </p>
                         </div>
                     </div>
@@ -90,81 +88,68 @@
                                 <%= (currentUser != null) ? currentUser.getFullName() : "Chủ quán"%>
                             </span>! 👋
                         </h3>
-                        <p class="text-gray-400 font-medium mt-1">Dưới đây là tình hình kinh doanh của <span
-                                class="text-secondary font-bold">nhà hàng</span> hôm nay.</p>
+                        <p class="text-gray-400 font-medium mt-1">Dưới đây là tình hình kinh doanh của 
+                            <span class="text-secondary font-bold">nhà hàng</span> hôm nay.</p>
                     </div>
 
                     <!-- Stats Grid -->
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                         <!-- Card 1 -->
-                        <div
-                            class="bg-white p-6 rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-                            <div
-                                class="w-12 h-12 rounded-2xl bg-orange-50 text-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <div class="bg-white p-6 rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                            <div class="w-12 h-12 rounded-2xl bg-orange-50 text-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                                 <span class="material-symbols-outlined">payments</span>
                             </div>
                             <p class="text-gray-400 text-[10px] font-black uppercase tracking-widest mb-1">Doanh thu
                             </p>
-                            <h4 class="text-2xl font-black text-secondary">0 <span
-                                    class="text-sm font-bold text-gray-300">VNĐ</span></h4>
+                            <h4 class="text-2xl font-black text-secondary">0
+                                <span class="text-sm font-bold text-gray-300">VND</span></h4>
                         </div>
                         <!-- Card 2 -->
-                        <div
-                            class="bg-white p-6 rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-                            <div
-                                class="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <div class="bg-white p-6 rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                            <div class="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                                 <span class="material-symbols-outlined">receipt_long</span>
                             </div>
                             <p class="text-gray-400 text-[10px] font-black uppercase tracking-widest mb-1">Đơn hàng
                             </p>
-                            <h4 class="text-2xl font-black text-secondary">0 <span
-                                    class="text-sm font-bold text-gray-300">Đơn</span></h4>
+                            <h4 class="text-2xl font-black text-secondary">0
+                                <span class="text-sm font-bold text-gray-300">Đơn</span></h4>
                         </div>
                         <!-- Card 3 -->
-                        <div
-                            class="bg-white p-6 rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-                            <div
-                                class="w-12 h-12 rounded-2xl bg-green-50 text-green-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <div class="bg-white p-6 rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                            <div class="w-12 h-12 rounded-2xl bg-green-50 text-green-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                                 <span class="material-symbols-outlined">groups</span>
                             </div>
-                            <p class="text-gray-400 text-[10px] font-black uppercase tracking-widest mb-1">Khách
-                                hàng</p>
-                            <h4 class="text-2xl font-black text-secondary">0 <span
-                                    class="text-sm font-bold text-gray-300">Người</span></h4>
+                            <p class="text-gray-400 text-[10px] font-black uppercase tracking-widest mb-1">
+                                Kháchhàng</p>
+                            <h4 class="text-2xl font-black text-secondary">0 
+                                <span class="text-sm font-bold text-gray-300">Người</span></h4>
                         </div>
                         <!-- Card 4 -->
-                        <div
-                            class="bg-white p-6 rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-                            <div
-                                class="w-12 h-12 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <div class="bg-white p-6 rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                            <div class="w-12 h-12 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                                 <span class="material-symbols-outlined">star</span>
                             </div>
-                            <p class="text-gray-400 text-[10px] font-black uppercase tracking-widest mb-1">Đánh giá
-                                tốt</p>
-                            <h4 class="text-2xl font-black text-secondary">100 <span
-                                    class="text-sm font-bold text-gray-300">%</span></h4>
+                            <p class="text-gray-400 text-[10px] font-black uppercase tracking-widest mb-1">
+                                Đánh giá tốt</p>
+                            <h4 class="text-2xl font-black text-secondary">100 
+                                <span class="text-sm font-bold text-gray-300">%</span></h4>
                         </div>
                     </div>
 
                     <!-- Action Section -->
-                    <div
-                        class="bg-white rounded-[3rem] border border-gray-100 p-12 text-center relative overflow-hidden group">
-                        <div
-                            class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -mr-32 -mt-32 blur-3xl group-hover:bg-primary/10 transition-all duration-700">
+                    <div class="bg-white rounded-[3rem] border border-gray-100 p-12 text-center relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -mr-32 -mt-32 blur-3xl group-hover:bg-primary/10 transition-all duration-700">
                         </div>
                         <div class="relative z-10 flex flex-col items-center">
-                            <div
-                                class="w-24 h-24 bg-gray-50 rounded-full flex items-center justify-center mb-8 shadow-inner">
-                                <span
-                                    class="material-symbols-outlined text-5xl text-gray-300">restaurant_menu</span>
+                            <div class="w-24 h-24 bg-gray-50 rounded-full flex items-center justify-center mb-8 shadow-inner">
+                                <span class="material-symbols-outlined text-5xl text-gray-300">restaurant_menu</span>
                             </div>
                             <h4 class="text-2xl font-black text-secondary mb-4">Mời bạn tạo thực đơn!</h4>
                             <p class="text-text-secondary max-w-sm mb-10 leading-relaxed">
                                 Thêm các món ăn đặc sắc của quán để bắt đầu nhận những đơn hàng đầu tiên từ khách
                                 hàng nhé.
                             </p>
-                            <button
-                                class="bg-primary hover:bg-primary-hover text-white font-black py-4 px-12 rounded-full shadow-2xl shadow-primary/30 transform transition-all hover:scale-105 active:scale-95 flex items-center gap-2">
+                            <button class="bg-primary hover:bg-primary-hover text-white font-black py-4 px-12 rounded-full shadow-2xl shadow-primary/30 transform transition-all hover:scale-105 active:scale-95 flex items-center gap-2">
                                 <span class="material-symbols-outlined">add_circle</span>
                                 Thiết lập thực đơn
                             </button>

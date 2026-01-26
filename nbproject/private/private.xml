@@ -3,15 +3,29 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/LEARN/SE%20IV%20SP26/PRJ301-Java%20Web%20Application%20Development/Restaurant_Management/src/java/danran.controller.admin/MenuManagementServlet.java</file>
-            <file>file:/E:/LEARN/SE%20IV%20SP26/PRJ301-Java%20Web%20Application%20Development/Restaurant_Management/web/login.jsp</file>
             <file>file:/E:/LEARN/SE%20IV%20SP26/PRJ301-Java%20Web%20Application%20Development/Restaurant_Management/web/forgot-password.jsp</file>
-            <file>file:/E:/LEARN/SE%20IV%20SP26/PRJ301-Java%20Web%20Application%20Development/Restaurant_Management/src/java/danran.controller.order/CartServlet.java</file>
-            <file>file:/E:/LEARN/SE%20IV%20SP26/PRJ301-Java%20Web%20Application%20Development/Restaurant_Management/src/java/danran.controller.order/CheckoutServlet.java</file>
+            <file>file:/E:/LEARN/SE%20IV%20SP26/PRJ301-Java%20Web%20Application%20Development/Restaurant_Management/web/cart.jsp</file>
+            <file>file:/E:/LEARN/SE%20IV%20SP26/PRJ301-Java%20Web%20Application%20Development/Restaurant_Management/web/menu.jsp</file>
+            <file>file:/E:/LEARN/SE%20IV%20SP26/PRJ301-Java%20Web%20Application%20Development/Restaurant_Management/web/verify-otp.jsp</file>
+            <file>file:/E:/LEARN/SE%20IV%20SP26/PRJ301-Java%20Web%20Application%20Development/Restaurant_Management/web/home.jsp</file>
             <file>file:/E:/LEARN/SE%20IV%20SP26/PRJ301-Java%20Web%20Application%20Development/Restaurant_Management/src/java/danran/util/EmailService.java</file>
             <file>file:/E:/LEARN/SE%20IV%20SP26/PRJ301-Java%20Web%20Application%20Development/Restaurant_Management/src/java/danran.controller.order/BookingServlet.java</file>
+            <file>file:/E:/LEARN/SE%20IV%20SP26/PRJ301-Java%20Web%20Application%20Development/Restaurant_Management/web/dashboard.jsp</file>
             <file>file:/E:/LEARN/SE%20IV%20SP26/PRJ301-Java%20Web%20Application%20Development/Restaurant_Management/web/booking.jsp</file>
+            <file>file:/E:/LEARN/SE%20IV%20SP26/PRJ301-Java%20Web%20Application%20Development/Restaurant_Management/web/danran.jsp</file>
+            <file>file:/E:/LEARN/SE%20IV%20SP26/PRJ301-Java%20Web%20Application%20Development/Restaurant_Management/web/index.html</file>
+            <file>file:/E:/LEARN/SE%20IV%20SP26/PRJ301-Java%20Web%20Application%20Development/Restaurant_Management/web/register.jsp</file>
+            <file>file:/E:/LEARN/SE%20IV%20SP26/PRJ301-Java%20Web%20Application%20Development/Restaurant_Management/web/admin-menu.jsp</file>
             <file>file:/E:/LEARN/SE%20IV%20SP26/PRJ301-Java%20Web%20Application%20Development/Restaurant_Management/web/booking-success.jsp</file>
+            <file>file:/E:/LEARN/SE%20IV%20SP26/PRJ301-Java%20Web%20Application%20Development/Restaurant_Management/src/java/danran.controller.admin/MenuManagementServlet.java</file>
+            <file>file:/E:/LEARN/SE%20IV%20SP26/PRJ301-Java%20Web%20Application%20Development/Restaurant_Management/web/login.jsp</file>
+            <file>file:/E:/LEARN/SE%20IV%20SP26/PRJ301-Java%20Web%20Application%20Development/Restaurant_Management/web/WEB-INF/fragments/header.jspf</file>
+            <file>file:/E:/LEARN/SE%20IV%20SP26/PRJ301-Java%20Web%20Application%20Development/Restaurant_Management/web/order-success.jsp</file>
+            <file>file:/E:/LEARN/SE%20IV%20SP26/PRJ301-Java%20Web%20Application%20Development/Restaurant_Management/web/admin-orders.jsp</file>
+            <file>file:/E:/LEARN/SE%20IV%20SP26/PRJ301-Java%20Web%20Application%20Development/Restaurant_Management/src/java/danran.controller.order/CartServlet.java</file>
+            <file>file:/E:/LEARN/SE%20IV%20SP26/PRJ301-Java%20Web%20Application%20Development/Restaurant_Management/src/java/danran.controller.order/CheckoutServlet.java</file>
+            <file>file:/E:/LEARN/SE%20IV%20SP26/PRJ301-Java%20Web%20Application%20Development/Restaurant_Management/web/reset-password.jsp</file>
+            <file>file:/E:/LEARN/SE%20IV%20SP26/PRJ301-Java%20Web%20Application%20Development/Restaurant_Management/web/WEB-INF/fragments/footer.jspf</file>
             <file>file:/E:/LEARN/SE%20IV%20SP26/PRJ301-Java%20Web%20Application%20Development/Restaurant_Management/src/java/danran.controller.admin/AdminOrderServlet.java</file>
         </group>
     </open-files>

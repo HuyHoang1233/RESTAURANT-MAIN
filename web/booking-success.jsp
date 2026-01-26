@@ -36,19 +36,9 @@
             }
 
             @keyframes checkmark {
-                0% {
-                    transform: scale(0);
-                    opacity: 0;
-                }
-
-                50% {
-                    transform: scale(1.2);
-                }
-
-                100% {
-                    transform: scale(1);
-                    opacity: 1;
-                }
+                0% { transform: scale(0); opacity: 0; }
+                50% { transform: scale(1.2); }
+                100% { transform: scale(1); opacity: 1; }
             }
 
             .animate-checkmark {
@@ -177,7 +167,7 @@
 
                 <!-- Actions -->
                 <div class="mt-6 space-y-3 animate-fade-in-up delay-3">
-                    <a href="#"
+                    <a href="#" 
                        class="flex items-center justify-center gap-2 bg-white border-2 border-gray-200 hover:border-primary text-secondary font-semibold py-4 rounded-2xl transition-all">
                         <span class="material-symbols-outlined text-[20px]">calendar_add_on</span>
                         Thêm vào Lịch

@@ -1,14 +1,14 @@
 <%@ page pageEncoding="UTF-8" contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" class="scroll-smooth">
 
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Danran - Quản lý nhà hàng </title>
         <meta name="description"
-              content="Hệ sinh thái công nghệ hàng đầu cho ngành F&B Việt Nam. Giúp nhà hàng vận hành chuyên nghiệp và hiệu quả hơn.">
+              content="Giúp nhà hàng vận hành chuyên nghiệp và hiệu quả hơn.">
 
         <!-- Tailwind CSS -->
         <script src="https://cdn.tailwindcss.com"></script>
@@ -40,68 +40,18 @@
         </script>
 
         <style>
-            /* Glass Header Effect */
-            .glass-header {
-                background: rgba(255, 255, 255, 0.8);
-                backdrop-filter: blur(12px);
-                -webkit-backdrop-filter: blur(12px);
-            }
-
-            /* Float Animations */
-            @keyframes float {
-
-                0%,
-                100% {
-                    transform: translateY(0px);
-                }
-
-                50% {
-                    transform: translateY(-10px);
-                }
-            }
-
-            .animate-float {
-                animation: float 4s ease-in-out infinite;
-            }
-
-            .animate-float-delayed {
-                animation: float 5s ease-in-out infinite;
-                animation-delay: 1s;
-            }
-
-            /* Fade In Animation */
-            @keyframes fadeInUp {
-                from {
-                    opacity: 0;
-                    transform: translateY(20px);
-                }
-
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-
-            .fade-in-up {
-                animation: fadeInUp 0.5s ease-out forwards;
-            }
-
-            /* Pulse Animation */
-            @keyframes pulse {
-
-                0%,
-                100% {
-                    opacity: 1;
-                }
-
-                50% {
-                    opacity: 0.5;
-                }
-            }
-
-            .animate-pulse {
-                animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-            }
+            /* Animation */
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+        .animate-float { animation: float 4s ease-in-out infinite; }
+        .animate-float-delayed { animation: float 5s ease-in-out infinite; animation-delay: 1s; }
+        .animate-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        
+        /* Glass Header vẫn giữ nguyên class cũ để tương thích với file include */
+        .glass-header {
+            background: rgba(255, 255, 255, 0.9); /* Giữ header sáng màu */
+            backdrop-filter: blur(12px);
+        }
         </style>
     </head>
 
@@ -112,19 +62,23 @@
         <main>
             <!-- ==================== HERO SECTION ==================== -->
             <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-white">
+                <div class="absolute inset-0 z-0">
+                    <img src="images/restaurant-nhat-ban.jpg" 
+                     alt="Background Danran" 
+                     class="w-full h-full object-cover" />
+                    <div class="absolute inset-0 bg-[#121212]/85"></div>
+                </div>
+                
                 <div class="container mx-auto px-4 grid lg:grid-cols-2 gap-16 items-center">
                     <!-- Hero Content -->
                     <div class="z-10">
-                        <div
-                            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-8">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-8">
                             <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
                             Giải pháp F&B toàn diện
                         </div>
-                        <h1
-                            class="text-5xl lg:text-7xl font-black text-secondary leading-[1.1] mb-6 tracking-tight">
+                        <h1 class="text-5xl lg:text-7xl font-black text-secondary leading-[1.1] mb-6 tracking-tight">
                             Quản lý nhà hàng <br />
-                            <span
-                                class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-400">
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-400">
                                 Danran</span> chỉ với 1 chạm
                         </h1>
                         <p class="text-lg text-text-sub mb-10 max-w-lg leading-relaxed">
@@ -135,19 +89,17 @@
                         <!-- Phone Input Form -->
                         <div class="max-w-md">
                             <form action="register.jsp" method="GET" class="relative group">
-                                <span
-                                    class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">call</span>
+                                <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">call</span>
                                 <input type="tel" name="phoneNumber" placeholder="Nhập số điện thoại của bạn"
-                                       class="w-full h-16 pl-12 pr-44 bg-gray-50 border border-gray-200 rounded-full focus:ring-4 focus:ring-primary/20 focus:border-primary outline-none transition-all"
-                                       required />
+                                class="w-full h-16 pl-12 pr-44 bg-gray-50 border border-gray-200 rounded-full focus:ring-4 focus:ring-primary/20 focus:border-primary outline-none transition-all"
+                                required />
                                 <button type="submit"
-                                        class="absolute right-1.5 top-1.5 h-[52px] px-8 bg-primary hover:bg-primary-hover text-white font-bold rounded-full transition-all shadow-md flex items-center gap-2">
+                                class="absolute right-1.5 top-1.5 h-[52px] px-8 bg-primary hover:bg-primary-hover text-white font-bold rounded-full transition-all shadow-md flex items-center gap-2">
                                     Trải nghiệm ngay
                                     <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
                                 </button>
                             </form>
-                            <p class="mt-4 text-xs text-gray-400 pl-4 italic">* Trải nghiệm hệ sinh thái Danran
-                                tiện ích, linh hoạt.</p>
+                            <p class="mt-4 text-xs text-gray-400 pl-4 italic">* Trải nghiệm hệ sinh thái Danran tiện ích, linh hoạt.</p>
                         </div>
 
                         <!-- Success/Error Messages from Servlet -->
@@ -166,24 +118,17 @@
                     <!-- Hero Image -->
                     <div class="relative">
                         <!-- Background Blurs -->
-                        <div
-                            class="absolute -top-20 -right-20 w-80 h-80 bg-blue-100 rounded-full blur-3xl opacity-50">
-                        </div>
-                        <div
-                            class="absolute -bottom-20 -left-20 w-80 h-80 bg-orange-100 rounded-full blur-3xl opacity-50">
-                        </div>
+                        <div class="absolute -top-20 -right-20 w-80 h-80 bg-blue-100 rounded-full blur-3xl opacity-50"></div>
+                        <div class="absolute -bottom-20 -left-20 w-80 h-80 bg-orange-100 rounded-full blur-3xl opacity-50"></div>
 
                         <!-- Dashboard Preview -->
-                        <div
-                            class="relative rounded-[2.5rem] shadow-2xl overflow-hidden border-8 border-white bg-gray-100 transform lg:rotate-3 hover:rotate-0 transition-transform duration-700 aspect-[4/3]">
-                            <img src="https://picsum.photos/seed/dashboard/1200/900" alt="Danran Dashboard"
+                        <div class="relative rounded-[2.5rem] shadow-2xl overflow-hidden border-8 border-white bg-gray-100 transform lg:rotate-3 hover:rotate-0 transition-transform duration-700 aspect-[4/3]">
+                            <img src="images/bep1.jpeg" alt="Danran Dashboard"
                                  class="w-full h-full object-cover" />
 
                             <!-- Floating Widget - Revenue -->
-                            <div
-                                class="absolute top-10 -left-6 bg-white p-4 rounded-2xl shadow-xl flex items-center gap-3 animate-float">
-                                <div
-                                    class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+                            <div class="absolute top-10 -left-6 bg-white p-4 rounded-2xl shadow-xl flex items-center gap-3 animate-float">
+                                <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
                                     <span class="material-symbols-outlined">trending_up</span>
                                 </div>
                                 <div>
@@ -194,10 +139,8 @@
                             </div>
 
                             <!-- Floating Widget - Orders -->
-                            <div
-                                class="absolute bottom-10 -right-6 bg-white p-4 rounded-2xl shadow-xl flex items-center gap-3 animate-float-delayed">
-                                <div
-                                    class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center text-primary">
+                            <div class="absolute bottom-10 -right-6 bg-white p-4 rounded-2xl shadow-xl flex items-center gap-3 animate-float-delayed">
+                                <div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center text-primary">
                                     <span class="material-symbols-outlined">restaurant</span>
                                 </div>
                                 <div>
@@ -215,35 +158,29 @@
                 <div class="container mx-auto px-4">
                     <p class="text-center text-xs font-bold text-gray-400 uppercase tracking-[0.2em] mb-8">
                         Được tin dùng bởi hơn 2000+ nhà hàng</p>
-                    <div
-                        class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-40 hover:opacity-100 transition-opacity duration-500">
+                    <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-40 hover:opacity-100 transition-opacity duration-500">
                         <!-- Partner 1 -->
-                        <div
-                            class="flex items-center gap-2 grayscale hover:grayscale-0 transition-all cursor-default">
+                        <div class="flex items-center gap-2 grayscale hover:grayscale-0 transition-all cursor-default">
                             <span class="material-symbols-outlined text-2xl text-gray-700">coffee</span>
                             <span class="text-xl font-black text-gray-700 tracking-tighter">COFFEEHOUSE</span>
                         </div>
                         <!-- Partner 2 -->
-                        <div
-                            class="flex items-center gap-2 grayscale hover:grayscale-0 transition-all cursor-default">
+                        <div class="flex items-center gap-2 grayscale hover:grayscale-0 transition-all cursor-default">
                             <span class="material-symbols-outlined text-2xl text-gray-700">bakery_dining</span>
                             <span class="text-xl font-black text-gray-700 tracking-tighter">BAKERY</span>
                         </div>
                         <!-- Partner 3 -->
-                        <div
-                            class="flex items-center gap-2 grayscale hover:grayscale-0 transition-all cursor-default">
+                        <div class="flex items-center gap-2 grayscale hover:grayscale-0 transition-all cursor-default">
                             <span class="material-symbols-outlined text-2xl text-gray-700">ramen_dining</span>
                             <span class="text-xl font-black text-gray-700 tracking-tighter">NOODLE</span>
                         </div>
                         <!-- Partner 4 -->
-                        <div
-                            class="flex items-center gap-2 grayscale hover:grayscale-0 transition-all cursor-default">
+                        <div class="flex items-center gap-2 grayscale hover:grayscale-0 transition-all cursor-default">
                             <span class="material-symbols-outlined text-2xl text-gray-700">local_pizza</span>
                             <span class="text-xl font-black text-gray-700 tracking-tighter">PIZZABOX</span>
                         </div>
                         <!-- Partner 5 -->
-                        <div
-                            class="flex items-center gap-2 grayscale hover:grayscale-0 transition-all cursor-default">
+                        <div class="flex items-center gap-2 grayscale hover:grayscale-0 transition-all cursor-default">
                             <span class="material-symbols-outlined text-2xl text-gray-700">local_bar</span>
                             <span class="text-xl font-black text-gray-700 tracking-tighter">PUB & BAR</span>
                         </div>
@@ -265,10 +202,8 @@
                     <!-- Features Grid -->
                     <div class="grid md:grid-cols-3 gap-8">
                         <!-- Feature 1 - QR Order -->
-                        <div
-                            class="p-10 rounded-[2.5rem] bg-[#F7FAFC] hover:bg-white border border-transparent hover:border-gray-100 hover:shadow-2xl transition-all duration-300 group">
-                            <div
-                                class="w-16 h-16 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 bg-blue-50 text-blue-600">
+                        <div class="p-10 rounded-[2.5rem] bg-[#F7FAFC] hover:bg-white border border-transparent hover:border-gray-100 hover:shadow-2xl transition-all duration-300 group">
+                            <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 bg-blue-50 text-blue-600">
                                 <span class="material-symbols-outlined text-3xl">qr_code_scanner</span>
                             </div>
                             <h3 class="text-xl font-extrabold text-secondary mb-4">Order QR tại bàn</h3>
@@ -278,10 +213,8 @@
                         </div>
 
                         <!-- Feature 2 - KDS -->
-                        <div
-                            class="p-10 rounded-[2.5rem] bg-[#F7FAFC] hover:bg-white border border-transparent hover:border-gray-100 hover:shadow-2xl transition-all duration-300 group">
-                            <div
-                                class="w-16 h-16 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 bg-orange-50 text-primary">
+                        <div class="p-10 rounded-[2.5rem] bg-[#F7FAFC] hover:bg-white border border-transparent hover:border-gray-100 hover:shadow-2xl transition-all duration-300 group">
+                            <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 bg-orange-50 text-primary">
                                 <span class="material-symbols-outlined text-3xl">skillet</span>
                             </div>
                             <h3 class="text-xl font-extrabold text-secondary mb-4">Hệ thống Bếp (KDS)</h3>
@@ -291,10 +224,8 @@
                         </div>
 
                         <!-- Feature 3 - Reports -->
-                        <div
-                            class="p-10 rounded-[2.5rem] bg-[#F7FAFC] hover:bg-white border border-transparent hover:border-gray-100 hover:shadow-2xl transition-all duration-300 group">
-                            <div
-                                class="w-16 h-16 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 bg-green-50 text-green-600">
+                        <div class="p-10 rounded-[2.5rem] bg-[#F7FAFC] hover:bg-white border border-transparent hover:border-gray-100 hover:shadow-2xl transition-all duration-300 group">
+                            <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 bg-green-50 text-green-600">
                                 <span class="material-symbols-outlined text-3xl">bar_chart</span>
                             </div>
                             <h3 class="text-xl font-extrabold text-secondary mb-4">Báo cáo Real-time</h3>
@@ -320,8 +251,7 @@
             <section class="py-24 bg-secondary text-white relative overflow-hidden">
                 <div class="absolute top-0 right-0 w-1/3 h-full bg-primary/10 blur-[120px]"></div>
                 <div class="container mx-auto px-4 relative z-10">
-                    <div
-                        class="max-w-4xl mx-auto bg-white/5 border border-white/10 backdrop-blur-md rounded-[3rem] p-8 md:p-12">
+                    <div class="max-w-4xl mx-auto bg-white/5 border border-white/10 backdrop-blur-md rounded-[3rem] p-8 md:p-12">
                         <div class="flex flex-col md:flex-row gap-12 items-center">
                             <!-- Form Section -->
                             <div class="flex-1">
@@ -349,13 +279,13 @@
                                         <label class="block text-xs font-bold text-gray-500 uppercase mb-2">Vấn
                                             đề bạn đang gặp</label>
                                         <textarea id="challengeInput"
-                                                  placeholder="VD: Khách hàng hay phàn nàn về việc chờ món lâu..."
-                                                  class="w-full h-32 p-4 bg-white/10 border border-white/20 rounded-2xl focus:ring-2 focus:ring-primary outline-none text-white resize-none"></textarea>
+                                         placeholder="VD: Khách hàng hay phàn nàn về việc chờ món lâu..."
+                                         class="w-full h-32 p-4 bg-white/10 border border-white/20 rounded-2xl focus:ring-2 focus:ring-primary outline-none text-white resize-none"></textarea>
                                     </div>
 
                                     <!-- Submit Button -->
                                     <button type="submit" id="aiSubmitBtn"
-                                            class="w-full h-14 bg-primary hover:bg-primary-hover text-white font-bold rounded-2xl transition-all flex items-center justify-center gap-2 disabled:opacity-50">
+                                    class="w-full h-14 bg-primary hover:bg-primary-hover text-white font-bold rounded-2xl transition-all flex items-center justify-center gap-2 disabled:opacity-50">
                                         <span id="btnText">Nhận tư vấn ngay</span>
                                         <span id="btnIcon" class="material-symbols-outlined">auto_awesome</span>
                                     </button>
@@ -363,8 +293,7 @@
                             </div>
 
                             <!-- AI Response Panel -->
-                            <div
-                                class="w-full md:w-80 h-[400px] bg-white/10 rounded-[2rem] p-6 border border-white/10 overflow-y-auto">
+                            <div class="w-full md:w-80 h-[400px] bg-white/10 rounded-[2rem] p-6 border border-white/10 overflow-y-auto">
                                 <div class="flex items-center gap-2 mb-4 border-b border-white/10 pb-4">
                                     <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
                                     <span class="text-sm font-bold">AI Assistant</span>
@@ -372,7 +301,7 @@
 
                                 <!-- Default State -->
                                 <div id="aiDefaultState"
-                                     class="h-full flex flex-col items-center justify-center text-center opacity-50">
+                              class="h-full flex flex-col items-center justify-center text-center opacity-50">
                                     <span class="material-symbols-outlined text-4xl mb-2">robot_2</span>
                                     <p class="text-sm">Điền thông tin bên trái để bắt đầu cuộc hội thoại.</p>
                                 </div>
@@ -380,7 +309,7 @@
                                 <!-- Response State (Hidden by default) -->
                                 <div id="aiResponseState" class="hidden space-y-4 fade-in-up">
                                     <p id="aiResponseText"
-                                       class="text-gray-200 text-sm leading-relaxed whitespace-pre-wrap"></p>
+                                 class="text-gray-200 text-sm leading-relaxed whitespace-pre-wrap"></p>
                                     <div class="p-3 bg-primary/20 rounded-xl border border-primary/30">
                                         <p class="text-[10px] uppercase font-bold text-primary mb-1">
                                             Gợi ý tính năng

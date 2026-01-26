@@ -1,3 +1,4 @@
+<%@ page pageEncoding="UTF-8" %>
 <footer class="bg-white pt-20 pb-10 border-t border-gray-100">
     <div class="container mx-auto px-4">
         <div class="grid md:grid-cols-4 gap-12 mb-16">
@@ -26,7 +27,7 @@
             </div>
         </div>
         <div class="pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-400 text-xs">
-            <p>© 2024 Danran n?n t?ng qu?n l� s? 1 Vi?t Nam.</p>
+            <p>2026 Danran nền tảng quản lý số 1 Việt Nam.</p>
             <div class="flex gap-6">
                 <span>Hotline: 19001234</span>
             </div>

@@ -31,11 +31,11 @@
                 <div>
                     <label class="block text-sm font-bold text-gray-700 mb-2">Email</label>
                     <input type="email" name="email" required placeholder="example@email.com"
-                           class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#ff6a00] outline-none">
+                      class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#ff6a00] outline-none">
                 </div>
 
                 <button type="submit"
-                        class="w-full bg-[#ff6a00] hover:bg-[#e65f00] text-white font-bold py-3 rounded-xl transition-all shadow-lg shadow-[#ff6a00]/20">
+                    class="w-full bg-[#ff6a00] hover:bg-[#e65f00] text-white font-bold py-3 rounded-xl transition-all shadow-lg shadow-[#ff6a00]/20">
                     Gửi mã OTP
                 </button>
             </form>

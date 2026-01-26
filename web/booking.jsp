@@ -140,8 +140,7 @@
                     <div class="mb-10">
                         <h1 class="text-4xl font-black leading-tight tracking-tight mb-2">Đặt bàn giữ chỗ
                         </h1>
-                        <p class="text-[#8d715e] text-lg font-medium">Nhanh chóng, linh hoạt, không cần đặt
-                            cọc</p>
+                        <p class="text-[#8d715e] text-lg font-medium">Nhanh chóng, linh hoạt, không cần đặt cọc</p>
                     </div>
 
                     <form id="bookingForm" action="${pageContext.request.contextPath}/booking" method="POST"
@@ -151,8 +150,7 @@
                         <div>
                             <label class="block text-base font-bold mb-3">Chọn chi nhánh</label>
                             <div class="space-y-3">
-                                <label
-                                    class="branch-option block p-4 border rounded-xl cursor-pointer transition-all border-primary bg-primary/5 relative overflow-hidden group">
+                                <label class="branch-option block p-4 border rounded-xl cursor-pointer transition-all border-primary bg-primary/5 relative overflow-hidden group">
                                     <input type="radio" name="branch" value="quan1" class="hidden" checked>
                                     <div class="flex items-center justify-between relative z-10">
                                         <div>
@@ -161,17 +159,14 @@
                                                 497 Võ Nguyên Giáp, Ngũ Hành Sơn, Đà Nẵng</p>
                                         </div>
                                         <div class="text-right">
-                                            <div
-                                                class="size-6 bg-primary rounded-full flex items-center justify-center ml-auto shadow-md shadow-primary/30">
-                                                <span
-                                                    class="material-symbols-outlined text-white text-[16px]">check</span>
+                                            <div class="size-6 bg-primary rounded-full flex items-center justify-center ml-auto shadow-md shadow-primary/30">
+                                                <span class="material-symbols-outlined text-white text-[16px]">check</span>
                                             </div>
                                         </div>
                                     </div>
                                 </label>
 
-                                <label
-                                    class="branch-option block p-4 border border-[#e7dfda] hover:border-primary/50 rounded-xl cursor-pointer transition-all relative overflow-hidden group">
+                                <label class="branch-option block p-4 border border-[#e7dfda] hover:border-primary/50 rounded-xl cursor-pointer transition-all relative overflow-hidden group">
                                     <input type="radio" name="branch" value="quan3" class="hidden">
                                     <div class="flex items-center justify-between relative z-10">
                                         <div>
@@ -180,10 +175,8 @@
                                                 407 Núi Thành, Hải Châu, Đà Nẵng</p>
                                         </div>
                                         <div class="text-right opacity-0 check-icon transition-opacity">
-                                            <div
-                                                class="size-6 bg-primary rounded-full flex items-center justify-center ml-auto shadow-md shadow-primary/30">
-                                                <span
-                                                    class="material-symbols-outlined text-white text-[16px]">check</span>
+                                            <div class="size-6 bg-primary rounded-full flex items-center justify-center ml-auto shadow-md shadow-primary/30">
+                                                <span class="material-symbols-outlined text-white text-[16px]">check</span>
                                             </div>
                                         </div>
                                     </div>
@@ -199,8 +192,7 @@
                                     <label class="cursor-pointer">
                                         <input type="radio" name="partySize" value="${i < 6 ? i : '6+'}"
                                                class="hidden pax-input" ${i==2 ? 'checked' : '' }>
-                                        <div
-                                            class="pax-btn w-12 h-12 flex items-center justify-center rounded-full border-2 border-[#e7dfda] text-secondary font-bold hover:border-primary transition-all">
+                                        <div class="pax-btn w-12 h-12 flex items-center justify-center rounded-full border-2 border-[#e7dfda] text-secondary font-bold hover:border-primary transition-all">
                                             ${i < 6 ? i : '6+' } </div>
                                     </label>
                                 </c:forEach>
@@ -221,8 +213,7 @@
                             <div class="space-y-6">
                                 <!-- Morning -->
                                 <div>
-                                    <h4
-                                        class="text-sm font-bold text-[#8d715e] uppercase mb-3 flex items-center gap-2">
+                                    <h4 class="text-sm font-bold text-[#8d715e] uppercase mb-3 flex items-center gap-2">
                                         <span class="material-symbols-outlined text-sm">wb_sunny</span> Sáng
                                     </h4>
                                     <div class="grid grid-cols-4 sm:grid-cols-5 gap-2" id="morningSlots">
@@ -230,10 +221,8 @@
                                 </div>
                                 <!-- Afternoon -->
                                 <div>
-                                    <h4
-                                        class="text-sm font-bold text-[#8d715e] uppercase mb-3 flex items-center gap-2">
-                                        <span
-                                            class="material-symbols-outlined text-sm">partly_cloudy_day</span>
+                                    <h4 class="text-sm font-bold text-[#8d715e] uppercase mb-3 flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-sm">partly_cloudy_day</span>
                                         Chiều
                                     </h4>
                                     <div class="grid grid-cols-4 sm:grid-cols-5 gap-2" id="afternoonSlots">
@@ -241,8 +230,7 @@
                                 </div>
                                 <!-- Evening -->
                                 <div>
-                                    <h4
-                                        class="text-sm font-bold text-[#8d715e] uppercase mb-3 flex items-center gap-2">
+                                    <h4 class="text-sm font-bold text-[#8d715e] uppercase mb-3 flex items-center gap-2">
                                         <span class="material-symbols-outlined text-sm">bedtime</span> Tối
                                     </h4>
                                     <div class="grid grid-cols-4 sm:grid-cols-5 gap-2" id="eveningSlots">
@@ -284,8 +272,7 @@
                          style="background-image: url('https://lh3.googleusercontent.com/p/AF1QipNaaaK6j7X4Kk4q2g2z7Zq7w5C5q5q5q5q5q5q5=s1360-w1360-h1020');">
                     </div>
                     <div class="absolute inset-0 bg-black/5 flex items-center justify-center">
-                        <div
-                            class="bg-white px-5 py-2 rounded-full shadow-2xl flex items-center gap-2 border border-[#e7dfda]">
+                        <div class="bg-white px-5 py-2 rounded-full shadow-2xl flex items-center gap-2 border border-[#e7dfda]">
                             <span class="material-symbols-outlined text-[#ff6a00]">location_on</span>
                             <span class="text-sm font-bold" id="mapBranchName">Danran - Ngũ Hành Sơn</span>
                         </div>
@@ -294,24 +281,20 @@
 
                 <!-- Ticket UI -->
                 <div class="flex-1 flex flex-col">
-                    <div
-                        class="bg-white rounded-2xl border border-[#e7dfda] shadow-sm relative overflow-hidden flex flex-col h-full">
+                    <div class="bg-white rounded-2xl border border-[#e7dfda] shadow-sm relative overflow-hidden flex flex-col h-full">
                         <div class="bg-[#ff6a00] h-2 w-full shrink-0"></div>
 
                         <div class="p-6 flex-1 flex flex-col">
-                            <h3
-                                class="text-lg font-bold mb-6 flex items-center justify-between text-[#181410]">
+                            <h3 class="text-lg font-bold mb-6 flex items-center justify-between text-[#181410]">
                                 Chi tiết đặt bàn
-                                <span
-                                    class="material-symbols-outlined text-[#8d715e] filled">confirmation_number</span>
+                                <span class="material-symbols-outlined text-[#8d715e] filled">confirmation_number</span>
                             </h3>
 
                             <div class="space-y-5">
                                 <div class="flex items-start gap-4">
                                     <span class="material-symbols-outlined text-[#ff6a00]">restaurant</span>
                                     <div>
-                                        <p
-                                            class="text-[10px] text-[#8d715e] font-bold uppercase tracking-wider mb-0.5">
+                                        <p class="text-[10px] text-[#8d715e] font-bold uppercase tracking-wider mb-0.5">
                                             Chi nhánh</p>
                                         <p class="font-semibold text-[#181410]" id="summaryBranch">
                                             Danran - Ngũ Hành Sơn (497 Võ Nguyên Giáp)</p>
@@ -320,18 +303,15 @@
                                 <div class="flex items-start gap-4">
                                     <span class="material-symbols-outlined text-[#ff6a00]">group</span>
                                     <div>
-                                        <p
-                                            class="text-[10px] text-[#8d715e] font-bold uppercase tracking-wider mb-0.5">
+                                        <p class="text-[10px] text-[#8d715e] font-bold uppercase tracking-wider mb-0.5">
                                             Số người</p>
                                         <p class="font-semibold text-[#181410]" id="summaryPax">02 người</p>
                                     </div>
                                 </div>
                                 <div class="flex items-start gap-4">
-                                    <span
-                                        class="material-symbols-outlined text-[#ff6a00]">calendar_month</span>
+                                    <span class="material-symbols-outlined text-[#ff6a00]">calendar_month</span>
                                     <div>
-                                        <p
-                                            class="text-[10px] text-[#8d715e] font-bold uppercase tracking-wider mb-0.5">
+                                        <p class="text-[10px] text-[#8d715e] font-bold uppercase tracking-wider mb-0.5">
                                             Thời gian</p>
                                         <p class="font-semibold text-[#181410]">
                                             <span id="summaryTime">--:--</span> • <span id="summaryDate">
@@ -345,12 +325,11 @@
                             <div class="ticket-perforation"></div>
 
                             <div class="text-center space-y-5 mt-auto">
-                                <p
-                                    class="text-[11px] text-[#8d715e] px-4 leading-relaxed font-medium italic">
+                                <p class="text-[11px] text-[#8d715e] px-4 leading-relaxed font-medium italic">
                                     Quý khách có thể thay đổi hoặc hủy bàn trước 30 phút mà không tốn phí.
                                 </p>
                                 <button type="submit" form="bookingForm"
-                                        class="w-full bg-[#ff6a00] hover:bg-[#e65f00] text-white h-14 rounded-xl font-black text-lg shadow-lg shadow-[#ff6a00]/25 transition-all active:scale-[0.98] transform">
+                                 class="w-full bg-[#ff6a00] hover:bg-[#e65f00] text-white h-14 rounded-xl font-black text-lg shadow-lg shadow-[#ff6a00]/25 transition-all active:scale-[0.98] transform">
                                     Xác nhận đặt bàn
                                 </button>
                             </div>

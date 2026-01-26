@@ -72,8 +72,7 @@
                                 <div class="space-y-4 max-h-[60vh] overflow-y-auto pr-2">
                                     <c:forEach var="d" items="${selectedOrderDetails}">
                                         <div class="flex gap-3">
-                                            <div
-                                                class="w-12 h-12 rounded-lg bg-gray-100 overflow-hidden shrink-0">
+                                            <div class="w-12 h-12 rounded-lg bg-gray-100 overflow-hidden shrink-0">
                                                 <img src="${d.imageUrl}" class="w-full h-full object-cover">
                                             </div>
                                             <div class="flex-1">
@@ -93,11 +92,9 @@
                                 </div>
                                 <!-- Action Buttons Placeholders -->
                                 <div class="mt-6 pt-4 border-t border-gray-100 flex gap-2">
-                                    <button
-                                        class="flex-1 bg-green-500 text-white font-bold py-2 rounded-xl text-sm">Hoàn
-                                        thành</button>
-                                    <button
-                                        class="flex-1 bg-red-100 text-red-500 font-bold py-2 rounded-xl text-sm">Hủy</button>
+                                    <button class="flex-1 bg-green-500 text-white font-bold py-2 rounded-xl text-sm">
+                                        Hoàn thành</button>
+                                    <button class="flex-1 bg-red-100 text-red-500 font-bold py-2 rounded-xl text-sm">Hủy</button>
                                 </div>
                             </c:when>
                             <c:otherwise>

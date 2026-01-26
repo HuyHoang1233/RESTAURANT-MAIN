@@ -46,8 +46,7 @@
             <body class="bg-gray-100 flex items-center justify-center min-h-screen p-0 sm:p-4">
 
                 <!-- Mobile Frame -->
-                <div
-                    class="relative w-full max-w-[480px] h-screen sm:h-[90vh] bg-background-light shadow-2xl rounded-none sm:rounded-[2.5rem] overflow-hidden flex flex-col border-none sm:border sm:border-white/20 ring-0 sm:ring-8 ring-black/5">
+                <div class="relative w-full max-w-[480px] h-screen sm:h-[90vh] bg-background-light shadow-2xl rounded-none sm:rounded-[2.5rem] overflow-hidden flex flex-col border-none sm:border sm:border-white/20 ring-0 sm:ring-8 ring-black/5">
 
                     <!-- Header -->
                     <header class="flex items-center justify-between px-5 py-4 bg-white shrink-0 z-10">
@@ -59,7 +58,7 @@
                         <form action="cart" method="POST" style="display:inline;">
                             <input type="hidden" name="action" value="clear">
                             <button type="submit"
-                                class="text-sm font-semibold text-gray-500 hover:text-primary transition-colors">
+                             class="text-sm font-semibold text-gray-500 hover:text-primary transition-colors">
                                 Xóa tất cả
                             </button>
                         </form>
@@ -122,23 +121,20 @@
                                                     <input type="hidden" name="id" value="${item.id}">
                                                     <input type="hidden" name="delta" value="-1">
                                                     <button type="submit"
-                                                        class="w-6 h-6 rounded-full bg-white shadow flex items-center justify-center hover:bg-gray-100 text-gray-600">
-                                                        <span
-                                                            class="material-symbols-outlined text-sm font-bold">remove</span>
+                                                 class="w-6 h-6 rounded-full bg-white shadow flex items-center justify-center hover:bg-gray-100 text-gray-600">
+                                                        <span class="material-symbols-outlined text-sm font-bold">remove</span>
                                                     </button>
                                                 </form>
 
-                                                <span
-                                                    class="text-sm font-bold text-gray-900 w-4 text-center">${item.quantity}</span>
+                                                <span class="text-sm font-bold text-gray-900 w-4 text-center">${item.quantity}</span>
 
                                                 <form action="cart" method="POST" style="display: flex;">
                                                     <input type="hidden" name="action" value="update">
                                                     <input type="hidden" name="id" value="${item.id}">
                                                     <input type="hidden" name="delta" value="1">
                                                     <button type="submit"
-                                                        class="w-6 h-6 rounded-full bg-primary text-white shadow flex items-center justify-center hover:bg-primary-hover">
-                                                        <span
-                                                            class="material-symbols-outlined text-sm font-bold">add</span>
+                                                 class="w-6 h-6 rounded-full bg-primary text-white shadow flex items-center justify-center hover:bg-primary-hover">
+                                                        <span class="material-symbols-outlined text-sm font-bold">add</span>
                                                     </button>
                                                 </form>
                                             </div>
@@ -156,16 +152,15 @@
                             </div>
                             <div class="flex gap-3 overflow-x-auto no-scrollbar pb-2 pr-5">
                                 <c:forEach var="uItem" items="${upsellItems}">
-                                    <div
-                                        class="min-w-[140px] bg-white p-3 rounded-2xl shadow-sm border border-gray-100 flex flex-col">
+                                    <div class="min-w-[140px] bg-white p-3 rounded-2xl shadow-sm border border-gray-100 flex flex-col">
                                         <div class="w-full h-24 rounded-xl overflow-hidden mb-3 relative group">
                                             <img src="${uItem.imageUrl}"
-                                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                                             <form action="cart" method="POST" class="absolute bottom-2 right-2">
                                                 <input type="hidden" name="action" value="addUpsell">
                                                 <input type="hidden" name="upsellId" value="${uItem.id}">
                                                 <button type="submit"
-                                                    class="w-8 h-8 rounded-full bg-white/90 backdrop-blur text-primary hover:bg-primary hover:text-white shadow-lg flex items-center justify-center transition-all">
+                                              class="w-8 h-8 rounded-full bg-white/90 backdrop-blur text-primary hover:bg-primary hover:text-white shadow-lg flex items-center justify-center transition-all">
                                                     <span class="material-symbols-outlined text-lg font-bold">add</span>
                                                 </button>
                                             </form>
@@ -205,10 +200,8 @@
                                                     currencySymbol="đ" maxFractionDigits="0" />
                                             </span>
                                         </div>
-                                        <div
-                                            class="flex items-center gap-2 bg-green-50 px-3 py-2 rounded-xl border border-green-100">
-                                            <span
-                                                class="material-symbols-outlined text-green-600 text-lg">check_circle</span>
+                                        <div class="flex items-center gap-2 bg-green-50 px-3 py-2 rounded-xl border border-green-100">
+                                            <span class="material-symbols-outlined text-green-600 text-lg">check_circle</span>
                                             <span class="text-xs font-bold text-green-700 flex-1">Đã dùng:
                                                 ${sessionScope.voucherCode}</span>
                                             <form action="cart" method="POST">
@@ -223,9 +216,9 @@
                                         <form action="cart" method="POST" class="flex gap-2">
                                             <input type="hidden" name="action" value="applyVoucher">
                                             <input type="text" name="voucherCode" placeholder="Mã giảm giá (DANRAN2024)"
-                                                class="flex-1 bg-gray-50 border border-gray-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-primary/50">
+                                         class="flex-1 bg-gray-50 border border-gray-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-primary/50">
                                             <button type="submit"
-                                                class="bg-secondary text-white px-4 py-2 rounded-xl text-xs font-bold hover:bg-primary transition-colors">
+                                          class="bg-secondary text-white px-4 py-2 rounded-xl text-xs font-bold hover:bg-primary transition-colors">
                                                 Áp dụng
                                             </button>
                                         </form>
@@ -244,8 +237,7 @@
                     </main>
 
                     <!-- Footer -->
-                    <footer
-                        class="absolute bottom-0 w-full bg-white/80 backdrop-blur-md border-t border-gray-100 p-5 pb-8 z-50">
+                    <footer class="absolute bottom-0 w-full bg-white/80 backdrop-blur-md border-t border-gray-100 p-5 pb-8 z-50">
                         <div class="flex items-center justify-between gap-4">
                             <div class="flex flex-col">
                                 <span class="text-xs text-gray-500 font-medium">Tổng cộng</span>
@@ -256,7 +248,7 @@
                             </div>
                             <form action="checkout" method="POST" class="flex-1 flex">
                                 <button type="submit"
-                                    class="flex-1 font-bold text-base py-3.5 px-6 rounded-full shadow-lg transition-all flex items-center justify-center gap-2 active:scale-[0.98] ${not empty sessionScope.cart ? 'bg-primary text-white shadow-primary/30 hover:bg-primary/90' : 'bg-gray-200 text-gray-400 cursor-not-allowed'}"
+                                 class="flex-1 font-bold text-base py-3.5 px-6 rounded-full shadow-lg transition-all flex items-center justify-center gap-2 active:scale-[0.98] ${not empty sessionScope.cart ? 'bg-primary text-white shadow-primary/30 hover:bg-primary/90' : 'bg-gray-200 text-gray-400 cursor-not-allowed'}"
                                     ${empty sessionScope.cart ? 'disabled' : '' }>
                                     <span>Đặt món</span>
                                     <span class="material-symbols-outlined text-lg">arrow_forward</span>
