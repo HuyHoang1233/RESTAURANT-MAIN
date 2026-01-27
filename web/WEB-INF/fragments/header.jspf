@@ -1,0 +1,33 @@
+<%@ page pageEncoding="UTF-8" %>
+<header class="fixed top-0 left-0 right-0 z-50 glass-header border-b border-gray-100">
+    <div class="container mx-auto px-4 h-20 flex items-center justify-between">
+        <!-- Logo -->
+        <a href="${pageContext.request.contextPath}/" class="flex items-center gap-2 cursor-pointer">
+            <div class="w-8 h-8 text-primary bg-primary/10 rounded-full flex items-center justify-center p-1.5">
+                <span class="material-symbols-outlined text-[20px]">soup_kitchen</span>
+            </div>
+            <span class="text-xl font-extrabold tracking-tight text-secondary">Danran</span>
+        </a>
+        
+        <!-- Navigation -->
+        <nav class="hidden md:flex items-center gap-10">
+            <a href="${pageContext.request.contextPath}/#features" class="text-sm font-semibold text-secondary hover:text-primary transition-colors">Tính năng</a>
+            <a href="${pageContext.request.contextPath}/#pricing" class="text-sm font-semibold text-secondary hover:text-primary transition-colors">Bảng giá</a>
+            <a href="${pageContext.request.contextPath}/#blog" class="text-sm font-semibold text-secondary hover:text-primary transition-colors">Blog</a>
+            
+            <% if (session.getAttribute("userPhone") != null) { %>
+                <a href="${pageContext.request.contextPath}/dashboard.jsp" class="text-sm font-bold text-primary hover:text-primary-hover transition-colors">Dashboard</a>
+                <a href="${pageContext.request.contextPath}/logout" class="text-sm font-semibold text-secondary hover:text-primary transition-colors">Đăng xuất</a>
+            <% } else { %>
+                <a href="${pageContext.request.contextPath}/login.jsp" class="text-sm font-bold text-primary hover:text-primary-hover transition-colors">Đăng nhập</a>
+            <% } %>
+        </nav>
+        
+        <!-- CTA Button -->
+        <% if (session.getAttribute("userPhone") == null) { %>
+            <a href="${pageContext.request.contextPath}/login.jsp" class="bg-primary hover:bg-primary-hover text-white text-sm font-bold py-2.5 px-6 rounded-full transition-all shadow-lg shadow-primary/25 hover:-translate-y-0.5 active:scale-95">
+                Dùng thử miễn phí
+            </a>
+        <% } %>
+    </div>
+</header>
