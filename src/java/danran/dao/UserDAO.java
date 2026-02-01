@@ -5,106 +5,142 @@ import danran.model.User;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
-/**
- * UserDAO handles database operations for the Users table.
- */
 public class UserDAO extends DBContext {
 
-    /**
-     * Authenticate user by phone number and password hash.
-     * Note: In a real app, use BCrypt or similar for password hashing.
-     */
+    // --- 1. XỬ LÝ ĐĂNG NHẬP ---
     public User login(String phone, String password) {
-        String sql = "SELECT u.*, r.role_name FROM Users u " +
-                "JOIN Roles r ON u.role_id = r.role_id " +
-                "WHERE u.phone_number = ? AND u.password_hash = ? AND u.is_active = 1";
-        try {
-            PreparedStatement st = connection.prepareStatement(sql);
+        // Lưu ý: Code này đang dùng cột 'password_hash'
+        String sql = "SELECT u.*, r.role_name FROM Users u "
+                + "JOIN Roles r ON u.role_id = r.role_id "
+                + "WHERE u.phone_number = ? AND u.password_hash = ? AND u.is_active = 1";
+        try (PreparedStatement st = connection.prepareStatement(sql)) {
             st.setString(1, phone);
             st.setString(2, password);
-            ResultSet rs = st.executeQuery();
-            if (rs.next()) {
-                User u = new User();
-                u.setUserId(rs.getInt("user_id"));
-                u.setRoleId(rs.getInt("role_id"));
-                u.setUsername(rs.getString("username"));
-                u.setFullName(rs.getString("full_name"));
-                u.setPhoneNumber(rs.getString("phone_number"));
-                u.setEmail(rs.getString("email"));
-                u.setIsActive(rs.getBoolean("is_active"));
-                u.setRoleName(rs.getString("role_name")); // Lấy role_name từ câu lệnh JOIN
-                return u;
+            try (ResultSet rs = st.executeQuery()) {
+                if (rs.next()) {
+                    User u = new User();
+                    u.setUserId(rs.getInt("user_id"));
+                    u.setRoleId(rs.getInt("role_id"));
+                    u.setUsername(rs.getString("username"));
+                    u.setFullName(rs.getString("full_name"));
+                    u.setPhoneNumber(rs.getString("phone_number"));
+                    u.setEmail(rs.getString("email"));
+                    u.setIsActive(rs.getBoolean("is_active"));
+                    u.setRoleName(rs.getString("role_name"));
+                    return u;
+                }
             }
         } catch (SQLException ex) {
-            System.err.println("UserDAO Login Error: " + ex.getMessage());
             ex.printStackTrace();
-            Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
     }
 
-    /**
-     * Check if an email exists in the database.
-     */
+    // --- 2. CÁC HÀM KIỂM TRA TỒN TẠI ---
     public boolean checkEmailExists(String email) {
         String sql = "SELECT user_id FROM Users WHERE email = ?";
-        try {
-            PreparedStatement st = connection.prepareStatement(sql);
+        try (PreparedStatement st = connection.prepareStatement(sql)) {
             st.setString(1, email);
-            ResultSet rs = st.executeQuery();
-            return rs.next();
+            try (ResultSet rs = st.executeQuery()) {
+                return rs.next();
+            }
         } catch (SQLException ex) {
-            Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
         }
         return false;
     }
 
-    /**
-     * Update password for a specific email.
-     */
+    public boolean checkPhoneExists(String phoneNumber) {
+        String sql = "SELECT user_id FROM Users WHERE phone_number = ?";
+        try (PreparedStatement st = connection.prepareStatement(sql)) {
+            st.setString(1, phoneNumber);
+            try (ResultSet rs = st.executeQuery()) {
+                return rs.next();
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return false;
+    }
+
+    public boolean checkUsernameExists(String username) {
+        String sql = "SELECT user_id FROM Users WHERE username = ?";
+        try (PreparedStatement st = connection.prepareStatement(sql)) {
+            st.setString(1, username);
+            try (ResultSet rs = st.executeQuery()) {
+                return rs.next();
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return false;
+    }
+
+    // --- 3. CẬP NHẬT MẬT KHẨU (Dùng cho Forgot Password) ---
+    // ✅ Đã sửa lại code này để dùng connection có sẵn và đúng tên cột password_hash
     public boolean updatePassword(String email, String newPassword) {
+        // QUAN TRỌNG: Tên cột phải là password_hash để khớp với hàm login bên trên
         String sql = "UPDATE Users SET password_hash = ? WHERE email = ?";
-        try {
-            PreparedStatement st = connection.prepareStatement(sql);
+        try (PreparedStatement st = connection.prepareStatement(sql)) {
+            // Nếu bạn có dùng mã hóa (MD5/SHA) thì nhớ mã hóa newPassword ở Controller trước khi truyền vào đây
             st.setString(1, newPassword);
             st.setString(2, email);
-            int rowsUpdated = st.executeUpdate();
-            return rowsUpdated > 0;
+            int rowsAffected = st.executeUpdate();
+            return rowsAffected > 0; // Trả về true nếu update thành công
         } catch (SQLException ex) {
-            Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
+            System.err.println("Lỗi updatePassword: " + ex.getMessage());
+            ex.printStackTrace();
         }
         return false;
     }
 
-    /**
-     * Register a new user in the database.
-     */
-    public boolean register(User user) {
+    // --- 4. ĐĂNG KÝ ---
+    public String register(User user) {
         if (connection == null) {
-            System.err.println("UserDAO Error: Connection is NULL. Please check DBContext credentials.");
-            return false;
+            return "Lỗi Kết Nối: DBContext chưa kết nối được SQL.";
         }
-
-        String sql = "INSERT INTO Users (role_id, username, password_hash, full_name, phone_number, email) VALUES (?, ?, ?, ?, ?, ?)";
-        try {
-            PreparedStatement st = connection.prepareStatement(sql);
+        String sql = "INSERT INTO Users (role_id, username, password_hash, full_name, phone_number, email, is_active) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        try (PreparedStatement st = connection.prepareStatement(sql)) {
             st.setInt(1, user.getRoleId());
             st.setString(2, user.getUsername());
             st.setString(3, user.getPasswordHash());
             st.setString(4, user.getFullName());
             st.setString(5, user.getPhoneNumber());
             st.setString(6, user.getEmail());
-
+            st.setBoolean(7, user.isIsActive());
             int result = st.executeUpdate();
-            return result > 0;
+            return result > 0 ? "Success" : "Thất bại: Không thêm được dòng nào.";
         } catch (SQLException ex) {
-            // In lỗi chi tiết ra console của NetBeans/Tomcat
-            System.err.println("UserDAO Register Error: " + ex.getMessage());
+            ex.printStackTrace();
+            return "Lỗi SQL: " + ex.getMessage();
+        }
+    }
+
+    // --- 5. LẤY THÔNG TIN USER BẰNG EMAIL (Dùng cho Google Login) ---
+    public User getUserByEmail(String email) {
+        String sql = "SELECT u.*, r.role_name FROM Users u "
+                + "JOIN Roles r ON u.role_id = r.role_id "
+                + "WHERE u.email = ?";
+        try (PreparedStatement st = connection.prepareStatement(sql)) {
+            st.setString(1, email);
+            try (ResultSet rs = st.executeQuery()) {
+                if (rs.next()) {
+                    User u = new User();
+                    u.setUserId(rs.getInt("user_id"));
+                    u.setRoleId(rs.getInt("role_id"));
+                    u.setUsername(rs.getString("username"));
+                    u.setFullName(rs.getString("full_name"));
+                    u.setPhoneNumber(rs.getString("phone_number"));
+                    u.setEmail(rs.getString("email"));
+                    u.setIsActive(rs.getBoolean("is_active"));
+                    u.setRoleName(rs.getString("role_name"));
+                    return u;
+                }
+            }
+        } catch (SQLException ex) {
             ex.printStackTrace();
         }
-        return false;
+        return null; // Trả về null nếu không tìm thấy
     }
 }

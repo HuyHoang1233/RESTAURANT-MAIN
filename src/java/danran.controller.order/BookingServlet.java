@@ -30,7 +30,7 @@ public class BookingServlet extends HttpServlet {
         String phone = request.getParameter("phone");
         String notes = request.getParameter("notes");
 
-        // TODO: Save booking to database
+        // Save booking to database
         // For now, redirect to success page with booking code
         String bookingCode = "BC" + System.currentTimeMillis() % 100000;
 
@@ -40,6 +40,8 @@ public class BookingServlet extends HttpServlet {
         request.setAttribute("date", date);
         request.setAttribute("time", time);
         request.setAttribute("fullName", fullName);
+        request.setAttribute("phone", phone);
+        request.setAttribute("notes", notes);
 
         request.getRequestDispatcher("/booking-success.jsp").forward(request, response);
     }

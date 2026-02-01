@@ -152,6 +152,17 @@
                             <div>
                                 <p class="text-xs text-gray-400">Người đặt</p>
                                 <p class="font-semibold">${fullName}</p>
+                                <p class="text-sm text-gray-500 font-medium mt-0.5">${phone}</p>
+                            </div>
+                        </div>
+                            
+                        <div class="flex items-start gap-4">
+                            <div class="size-10 bg-primary/10 rounded-xl flex items-center justify-center shrink-0 mt-1">
+                                <span class="material-symbols-outlined text-primary text-[20px]">description</span>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-400">Ghi chú</p>
+                                <p class="font-semibold">${not empty notes ? notes : "Không có"}</p>
                             </div>
                         </div>
                     </div>
@@ -167,12 +178,6 @@
 
                 <!-- Actions -->
                 <div class="mt-6 space-y-3 animate-fade-in-up delay-3">
-                    <a href="#" 
-                       class="flex items-center justify-center gap-2 bg-white border-2 border-gray-200 hover:border-primary text-secondary font-semibold py-4 rounded-2xl transition-all">
-                        <span class="material-symbols-outlined text-[20px]">calendar_add_on</span>
-                        Thêm vào Lịch
-                    </a>
-
                     <a href="${pageContext.request.contextPath}/menu"
                        class="flex items-center justify-center gap-2 bg-primary/10 hover:bg-primary/20 text-primary font-semibold py-4 rounded-2xl transition-all">
                         <span class="material-symbols-outlined text-[20px]">restaurant_menu</span>
@@ -185,10 +190,7 @@
                         Về trang chủ
                     </a>
                 </div>
-
             </div>
         </main>
-
     </body>
-
 </html>
