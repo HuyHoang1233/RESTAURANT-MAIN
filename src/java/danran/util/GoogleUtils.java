@@ -2,18 +2,14 @@ package danran.util;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
-import java.io.IOException;
-import org.apache.http.client.fluent.Request;
-import org.apache.http.client.fluent.Form;
-
-// ⚠️ LƯU Ý: Bạn cần thêm thư viện: 'gson-2.10.1.jar' và 'httpclient' 
-// Nếu chưa thạo việc add thư viện ngoài, bạn có thể dùng code thuần Java.net bên dưới
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import danran.util.GoogleUser; // Đảm bảo import đúng class GoogleUser của bạn
 
 public class GoogleUtils {
 
@@ -22,6 +18,8 @@ public class GoogleUtils {
     public static final String GOOGLE_CLIENT_SECRET = "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";
 
     // Link này phải khớp Y CHANG link bạn đăng ký trong Google Cloud Console
+    // Lưu ý: Tôi đã sửa dấu cách trong "Restaurant Management" thành dấu gạch dưới "_" nếu project của bạn dùng "_"
+    // Nếu project thật của bạn tên có dấu cách, hãy sửa lại chỗ này.
     public static final String GOOGLE_REDIRECT_URI = "http://localhost:8081/Restaurant_Management/login-google";
 
     public static final String GOOGLE_GRANT_TYPE = "authorization_code";

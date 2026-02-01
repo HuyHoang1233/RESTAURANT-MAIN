@@ -31,43 +31,46 @@ public class LoginGoogleServlet extends HttpServlet {
             // 1. Lấy Access Token
             String accessToken = GoogleUtils.getToken(code);
 
-            // 2. Lấy thông tin User
+            // 2. Lấy thông tin User từ Google
             GoogleUser googleUser = GoogleUtils.getUserInfo(accessToken);
 
             if (googleUser != null) {
                 String email = googleUser.getEmail();
                 UserDAO dao = new UserDAO();
+
+                // Kiểm tra xem email này đã tồn tại trong DB chưa
                 User user = dao.getUserByEmail(email);
 
-                // 3. Logic Đăng ký/Đăng nhập
+                // 3. Logic Đăng ký (nếu chưa có) / Đăng nhập (nếu đã có)
                 if (user == null) {
                     user = new User();
                     user.setEmail(email);
-                    user.setUsername(email);
+                    user.setUsername(email); // Lấy email làm username
                     user.setFullName(googleUser.getName());
-                    user.setPasswordHash("GOOGLE_LOGIN");
-                    user.setRoleId(2);
+                    user.setPasswordHash("GOOGLE_LOGIN"); // Mật khẩu giả định
+                    user.setRoleId(2); // 2 là Role Khách hàng
                     user.setIsActive(true);
 
-                    // Lưu ý: Hàm register cần trả về User hoặc ID để dùng tiếp
+                    // Gọi hàm đăng ký
                     dao.register(user);
 
-                    // Lấy lại user sau khi insert để đảm bảo có đầy đủ ID
+                    // Lấy lại thông tin user từ DB sau khi insert để có ID chính xác
                     user = dao.getUserByEmail(email);
                 }
 
-                // 4. Tạo Session
+                // 4. Tạo Session và đăng nhập thành công
                 HttpSession session = request.getSession();
                 session.setAttribute("account", user);
                 response.sendRedirect("home.jsp");
             } else {
-                // Trường hợp có token nhưng không lấy được info
+                // Trường hợp có token nhưng không lấy được thông tin user
                 response.sendRedirect("login.jsp?error=GoogleInfoEmpty");
             }
         } catch (Exception e) {
-            e.printStackTrace(); // Xem log server để biết lỗi gì
-            // Chuyển hướng về trang login kèm thông báo lỗi
+            e.printStackTrace(); // In lỗi ra log của Server để debug
+            // Chuyển hướng về trang login kèm thông báo lỗi chung
             response.sendRedirect("login.jsp?error=GoogleLoginFailed");
         }
+    
     }
 }
